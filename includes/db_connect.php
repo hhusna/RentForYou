@@ -1,12 +1,8 @@
 <?php
-/**
- * File ini digunakan untuk menghubungkan aplikasi ke database MySQL.
- */
-
-define('SITE_URL', 'http://RentForYou.project2ks2.my.id/');
+define('SITE_URL', 'http://rentforyou.project2ks2.my.id/');
 $host = "localhost";        
 $db_name = "projec15_rentforyou";    
-$username = "root";         
+$username = "projec15_root";         
 $password = "@kaesquare123";             
 
 // --- MEMBUAT KONEKSI MENGGUNAKAN PDO ---
