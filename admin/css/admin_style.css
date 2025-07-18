@@ -1,0 +1,404 @@
+/* admin_style.css */
+:root {
+    --admin-bg: #f8fafc;
+    --sidebar-bg: #1e293b;
+    --header-bg: #ffffff;
+    --card-bg: #ffffff;
+    --text-primary: #1e293b;
+    --text-secondary: #64748b;
+    --accent-color: #3b82f6;
+    --border-color: #e2e8f0;
+    /* Colors for transaction status */
+    --status-pending: #f59e0b;
+    --status-approved: #10b981;
+    --status-rejected: #ef4444;
+    --status-ongoing: #3b82f6;
+    --status-finished: #6b7280;
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: var(--admin-bg);
+}
+
+/* Add this to prevent horizontal overflow on the entire page */
+html, body {
+    overflow-x: hidden;
+}
+
+.admin-wrapper {
+    display: flex;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 250px;
+    background-color: #1A3365;
+    min-height: 100vh;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-logo {
+    padding: 5px 20px;
+    background-color: #1A3365;
+    color: white;
+    text-align: center;
+    font-size: 32px;
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-weight: 400;
+}
+
+.sidebar-nav {
+    flex-grow: 1; /* Makes the nav fill the remaining space */
+    background-color: #e2e8f0;
+}
+
+.sidebar-nav a {
+    display: block;
+    color: var(--text-primary);
+    text-decoration: none;
+    padding: 15px;
+    font-size: 16px;
+    font-weight: 600;
+    border-bottom: 1px solid var(--border-color);
+    transition: background-color 0.2s;
+}
+
+.sidebar-nav a:hover {
+    background-color: #64748b; /* Highlight color on hover */
+    color: var(--text-primary);
+}
+
+.sidebar-nav a.active {
+    background-color: white; /* White background for active menu */
+    border-left: 5px solid var(--accent-color);
+    padding-left: 15px; /* Adjust padding to keep text neat */
+}
+
+/* Main Content */
+.main-content {
+    flex-grow: 1;
+    padding: 20px;
+    min-width: 0; 
+    width: 100%; 
+}
+
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    background-color: var(--header-bg);
+    padding: 15px 25px;
+    border-radius: 12px;
+    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+    color: #1A3365;
+}
+
+.main-header .page-title {
+    margin: 0;
+    color: var(--text-primary);
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.admin-user-menu {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.admin-welcome {
+    text-align: right;
+}
+
+.admin-welcome .welcome-text {
+    display: block;
+    color: var(--text-primary);
+    font-size: 15px;
+}
+
+.admin-welcome .welcome-role {
+    display: block;
+    font-size: 12px;
+    color: var(--text-secondary);
+}
+
+.admin-logout-btn {
+    background-color: #f1f5f9;
+    color: var(--text-secondary);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.admin-logout-btn:hover {
+    background-color: #ef4444; /* Red color on hover */
+    color: white;
+}
+
+/* --- STYLE FOR DASHBOARD --- */
+.dashboard-grid {
+    display: grid;
+    /* Creates 4 columns on large screens, and adjusts on smaller screens */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.stat-card {
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+    border: 1px solid var(--border-color);
+    display: flex;
+    padding: 20px;
+    align-items: center;
+    border-left-width: 5px;
+}
+
+/* Border Color Variations for Each Card */
+.stat-card.customer { border-left-color: #4f46e5; }
+.stat-card.motor { border-left-color: #0ea5e9; }
+.stat-card.sewa { border-left-color: #f59e0b; }
+.stat-card.transaksi { border-left-color: #10b981; }
+.stat-card.pendapatan { border-left-color: #84cc16; }
+
+.stat-card-info {
+    flex-grow: 1;
+}
+
+.stat-card-info h3 {
+    margin: 0 0 5px 0;
+    color: var(--text-secondary);
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.stat-card-info .stat-number {
+    margin: 0;
+    font-size: 28px;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.stat-card-icon {
+    font-size: 24px;
+    color: var(--text-secondary);
+    opacity: 0.7;
+}
+/* --- END OF DASHBOARD STYLE --- */
+
+
+/* Table */
+.table-container {
+    background-color: var(--card-bg);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    overflow-x: auto; /* Allows horizontal scrolling if the table is too wide */
+}
+
+.table-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.table-header h3 {
+    margin: 0;
+    color: #1A3365;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: auto; 
+    width: 100%; 
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+    vertical-align: middle;
+    white-space: normal; /* Changed from nowrap to normal to allow text to wrap */
+    max-width: 100%; /* Ensure cells do not exceed container width */
+    box-sizing: border-box; /* Include padding in width calculation */
+    overflow-wrap: break-word; /* Break long words if necessary */
+    word-break: break-all; /* More aggressive word breaking */
+}
+
+th {
+    text-align: center; /* Center align text in table headers */
+    white-space: normal; /* Ensure wrapping is allowed */
+    word-break: break-all; /* Aggressive word breaking for headers */
+    font-size: 15px;
+}
+
+table th:nth-child(7),
+table td:nth-child(7),
+table th:nth-child(8),
+table td:nth-child(8) {
+    text-align: center;
+    align-items: center;
+}
+
+.status-badge {
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 20px;
+    color: white;
+    font-size: 12px;
+    font-weight: 500;
+    white-space: normal; /* Changed from nowrap to normal to allow text to wrap */
+}
+.status-menunggu-konfirmasi { background-color: var(--status-pending); }
+.status-pesanan-disetujui { background-color: #22c55e; /* green-500 */ }
+.status-sedang-berjalan { background-color: #3b82f6; /* blue-500 */ }
+.status-selesai { background-color: #16a34a; /* green-700 */ }
+.status-pesanan-ditolak { background-color: #ef4444; /* red-500 */ }
+
+
+/* Arrange forms and links within to be vertically aligned */
+.action-buttons form,
+.action-buttons a {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 2.5px;
+}
+
+.action-buttons button {
+    margin: 0;
+    text-decoration: none;
+    padding: 6px 12px;
+    border-radius: 6px;
+    color: white;
+    font-size: 14px;
+    display: inline-block;
+    border: none;
+    cursor: pointer;
+    white-space: normal; /* Changed from nowrap to normal to allow text to wrap */
+}
+
+.btn {
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    color: white;
+    font-weight: 500;
+}
+
+.btn-primary { background-color: var(--accent-color); }
+.btn-edit { background-color: #f59e0b; }
+.btn-delete { background-color: #ef4444; }
+
+/* Form */
+.form-container-admin {
+    background-color: var(--card-bg);
+    padding: 30px;
+    border-radius: 12px;
+    max-width: 700px;
+    margin: 20px auto;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+.form-group {
+    margin-bottom: 20px;
+}
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+.form-group textarea {
+    resize: vertical;
+}
+
+/* Messages */
+.message { padding: 15px; margin-bottom: 20px; border-radius: 8px; text-align: center; }
+.error-message { background-color: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
+.success-message { background-color: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
+
+/* Upload File Gambar Motor */
+.custom-file-upload {
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    padding: 0;
+    cursor: pointer;
+}
+
+.custom-file-upload input[type="file"] {
+    display: none; /* Hide original file input */
+}
+
+.file-upload-label {
+    background-color: #f1f5f9;
+    padding: 10px 15px;
+    border-right: 1px solid #cbd5e1;
+    color: #333;
+    font-weight: 500;
+}
+
+#file-name-display {
+    padding-left: 15px;
+    color: #64748b;
+    font-size: 14px;
+    white-space: nowrap; /* This was the culprit for file name display */
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/** STYLE FOR TRANSACTIONS **/
+/* Add style for status badge */
+.status-badge {
+    padding: 4px 8px;
+    border-radius: 5px;
+    font-size: 0.85em;
+    font-weight: bold;
+    color: white;
+}
+/* Colors for new status */
+.status-menunggu-konfirmasi { background-color: #f59e0b; /* orange */ }
+.status-pesanan-disetujui { background-color: #22c55e; /* green-500 */ }
+.status-sedang-berjalan { background-color: #3b82f6; /* blue-500 */ }
+.status-selesai { background-color: #16a34a; /* green-700 */ }
+.status-pesanan-ditolak { background-color: #ef4444; /* red-500 */ }
+
+/* Style for buttons in the table */
+.btn-setujui { background-color: #22c55e; /* Green for approve */ }
+.btn-tolak { background-color: #ef4444; /* Red for reject */ }
+.btn-mulai { background-color: #3b82f6; /* Blue for start rental */ }
+.btn-selesai { background-color: #16a34a; /* Dark green for return confirmation */ }
+
+.btn-setujui:hover, .btn-tolak:hover, .btn-mulai:hover, .btn-selesai:hover {
+    opacity: 0.6;
+}
+
+.action-buttons form {
+     margin-right: 5px; /* Small spacing between buttons */
+     margin-bottom: 5px; /* Spacing between buttons if on a new line */
+     display: inline-block; /* Ensure buttons remain aligned */
+}
+.action-buttons button {
+    white-space: normal; /* Changed from nowrap to normal to allow text to wrap */
+}

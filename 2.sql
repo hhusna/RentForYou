@@ -1,0 +1,1 @@
+ALTER TABLE motor DROP COLUMN nopol;

@@ -1,0 +1,132 @@
+/* nota_style.css */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f7f6;
+    color: #333;
+    line-height: 1.6;
+}
+
+.nota-container {
+    width: 800px;
+    margin: 40px auto;
+    padding: 40px;
+    background-color: white;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+
+.nota-header {
+    text-align: center;
+    margin-bottom: 40px;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 20px;
+}
+
+.nota-header h1 {
+    margin: 0;
+    color: #1A3365;
+}
+
+.nota-header .company-name {
+    margin: 5px 0 0 0;
+    font-size: 18px;
+    color: #555;
+}
+
+.nota-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+.info-right {
+    text-align: right;
+}
+
+.nota-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 40px;
+}
+
+.nota-table th, .nota-table td {
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.nota-table thead th {
+    background-color: #f8f9fa;
+    text-align: left;
+    font-weight: 600;
+}
+
+.nota-table tfoot .total-label {
+    text-align: right;
+    font-weight: bold;
+    font-size: 18px;
+    border: none;
+}
+
+.nota-table tfoot .total-amount {
+    font-weight: bold;
+    font-size: 18px;
+    color: #1A3365;
+    border: none;
+}
+
+.nota-footer {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px dashed #ccc;
+    font-size: 14px;
+    color: #777;
+}
+
+.nota-footer strong {
+    display: block;
+    margin-top: 10px;
+    font-size: 16px;
+    color: #333;
+}
+
+.nota-actions {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.nota-actions a, .nota-actions button {
+    display: inline-block;
+    margin: 0 10px;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    border: 1px solid #1A3365;
+}
+
+.nota-actions a {
+    background-color: white;
+    color: #1A3365;
+}
+
+.nota-actions button {
+    background-color: #1A3365;
+    color: white;
+}
+
+/* Style untuk mode cetak */
+@media print {
+    body {
+        background-color: white;
+    }
+    .nota-container {
+        width: 100%;
+        margin: 0;
+        box-shadow: none;
+    }
+    .nota-actions {
+        display: none;
+    }
+}
