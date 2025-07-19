@@ -111,7 +111,7 @@
         }).toString();
 
         // Kirim request ke server
-        fetch(`/RentForYou/ajax/live_search.php?${params}`)
+        fetch(`../ajax/live_search.php?${params}`)
             .then(response => response.text())
             .then(html => {
                 // Ganti konten grid dengan hasil dari server

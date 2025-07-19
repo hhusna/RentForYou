@@ -24,9 +24,9 @@ $motors = getMotorsByFilter($conn, $filters);
 if (!empty($motors)) {
     foreach ($motors as $motor) {
         // Menentukan path gambar dan placeholder
-        $image_path = "/RentForYou/assets/uploads/" . htmlspecialchars($motor['gambar']);
+        $image_path = " ../assets/uploads/" . htmlspecialchars($motor['gambar']);
         $placeholder_path = "https://placehold.co/600x400/f1f5f9/a0aec0?text=Gambar+Tidak+Tersedia";
-        $real_image_path = $_SERVER['DOCUMENT_ROOT'] . '/RentForYou/assets/uploads/' . $motor['gambar'];
+        $real_image_path = $_SERVER['DOCUMENT_ROOT'] . '../assets/uploads/' . $motor['gambar'];
         $final_image_src = (!empty($motor['gambar']) && file_exists($real_image_path)) ? $image_path : $placeholder_path;
 
         // Echo (kirim) HTML untuk setiap kartu motor
