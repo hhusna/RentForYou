@@ -50,34 +50,30 @@
 <!-- Display Motor -->
 <section id="motor-list" class="motor-list-section">
     <div class="motor-grid" id="motor-grid-container">
-        <?php if (empty($motors)): ?>
-            <p style="text-align: center; grid-column: 1 / -1;">Motor tidak ditemukan.</p>
-        <?php else: ?>
-            <?php foreach ($motors as $motor): ?>
-                <div class="motor-card">
-                    <div class="card-image">
-                        <img src="../assets/uploads/<?php echo htmlspecialchars($motor['gambar']); ?>" alt="Gambar <?php echo htmlspecialchars($motor['merk'] . ' ' . $motor['model']); ?>">
-                    </div>
-                    <div class="card-content">
-                        <h3 class="card-title"><?php echo htmlspecialchars($motor['merk'].' '.$motor['model']); ?></h3>
-                        <p class="card-price">Rp <?php echo number_format($motor['harga_perHari'], 0, ',', '.'); ?> / hari</p>
-                        
-                        <?php
-                        // Logika ini sekarang akan bekerja karena $motor['stok_tersedia'] sudah ada
-                        if ($motor['stok_tersedia'] > 0) {
-                            if (isset($_SESSION['user_id'])) {
-                                echo '<a href="detail_motor_controller.php?id=' . $motor['id_motor'] . '" class="btn-pesan">Pesan</a>';
-                            } else {
-                                echo '<a href="login_controller.php" class="btn-pesan">Login untuk Pesan</a>';
-                            }
-                        } else {
-                            echo '<span class="btn-habis">Stok Habis</span>';
-                        }
-                        ?>
-                    </div>
+        <?php foreach ($motors as $motor): ?>
+            <div class="motor-card">
+                <div class="card-image">
+                    <img src="../assets/uploads/<?php echo htmlspecialchars($motor['gambar']); ?>" alt="Gambar <?php echo htmlspecialchars($motor['merk'] . ' ' . $motor['model']); ?>">
                 </div>
-            <?php endforeach; ?>
-        <?php endif; ?>
+                <div class="card-content">
+                    <h3 class="card-title"><?php echo htmlspecialchars($motor['merk'].' '.$motor['model']); ?></h3>
+                    <p class="card-price">Rp <?php echo number_format($motor['harga_perHari'], 0, ',', '.'); ?> / hari</p>
+
+                    <?php
+                    // Logika ini sekarang akan bekerja karena $motor['stok_tersedia'] sudah ada
+                    if ($motor['stok_tersedia'] > 0) {
+                        if (isset($_SESSION['user_id'])) {
+                            echo '<a href="detail_motor_controller.php?id=' . $motor['id_motor'] . '" class="btn-pesan">Pesan</a>';
+                        } else {
+                            echo '<a href="login_controller.php" class="btn-pesan">Login untuk Pesan</a>';
+                        }
+                    } else {
+                        echo '<span class="btn-habis">Stok Habis</span>';
+                    }
+                    ?>
+                </div>
+            </div>
+        <?php endforeach; ?>
     </div>
 </section>
 
