@@ -9,8 +9,7 @@ if (session_status() === PHP_SESSION_NONE) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo $page_title ?? 'RentForYou'; ?></title>
-    <!-- Menggunakan path absolut untuk CSS -->
-    <link rel="stylesheet" href="/RentForYou/assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
     <style>
         html { scroll-behavior: smooth; }
     </style>

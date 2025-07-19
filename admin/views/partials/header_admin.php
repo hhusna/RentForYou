@@ -6,8 +6,7 @@ if (session_status() === PHP_SESSION_NONE) {
 
 // Jika tidak ada session user atau rolenya bukan admin, tendang ke halaman login
 if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'admin') {
-    // Menggunakan path absolut untuk pengalihan
-    header("Location: /RentForYou/controller/login_controller.php");
+    header("Location: ../controller/login_controller.php");
     exit();
 }
 
@@ -20,7 +19,7 @@ $active_menu = $active_menu ?? '';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo $page_title ?? 'Admin Panel - RentForYou'; ?></title>
-    <link rel="stylesheet" href="/RentForYou/admin/css/admin_style.css">
+    <link rel="stylesheet" href="../admin/css/admin_style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&display=swap" rel="stylesheet">

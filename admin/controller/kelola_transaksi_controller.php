@@ -6,7 +6,7 @@ session_start();
 $page_title = "Kelola Transaksi"; // Judul halaman untuk header
 
 if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'admin') {
-    header("Location: /RentForYou/controller/login_controller.php");
+    header("Location: ../controller/login_controller.php");
     exit();
 }
 

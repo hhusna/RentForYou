@@ -5,7 +5,6 @@
         <h1 class="page-main-title">Riwayat Pesanan Saya</h1>
 
         <?php
-        // Menampilkan pesan sukses jika ada
         if (isset($_SESSION['success_message'])) {
             echo '<div class="message success-message">' . htmlspecialchars($_SESSION['success_message']) . '</div>';
             unset($_SESSION['success_message']);

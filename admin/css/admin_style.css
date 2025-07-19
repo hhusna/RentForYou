@@ -232,17 +232,17 @@ th, td {
     text-align: left;
     border-bottom: 1px solid var(--border-color);
     vertical-align: middle;
-    white-space: normal; /* Changed from nowrap to normal to allow text to wrap */
-    max-width: 100%; /* Ensure cells do not exceed container width */
-    box-sizing: border-box; /* Include padding in width calculation */
-    overflow-wrap: break-word; /* Break long words if necessary */
-    word-break: break-all; /* More aggressive word breaking */
+    white-space: normal;  
+    max-width: 100%; 
+    box-sizing: border-box; 
+    overflow-wrap: break-word; 
+    word-break: break-all; 
 }
 
 th {
-    text-align: center; /* Center align text in table headers */
-    white-space: normal; /* Ensure wrapping is allowed */
-    word-break: break-all; /* Aggressive word breaking for headers */
+    text-align: center; 
+    white-space: normal; 
+    word-break: break-all; 
     font-size: 15px;
 }
 
@@ -261,16 +261,15 @@ table td:nth-child(8) {
     color: white;
     font-size: 12px;
     font-weight: 500;
-    white-space: normal; /* Changed from nowrap to normal to allow text to wrap */
+    white-space: normal; 
 }
 .status-menunggu-konfirmasi { background-color: var(--status-pending); }
-.status-pesanan-disetujui { background-color: #22c55e; /* green-500 */ }
-.status-sedang-berjalan { background-color: #3b82f6; /* blue-500 */ }
-.status-selesai { background-color: #16a34a; /* green-700 */ }
-.status-pesanan-ditolak { background-color: #ef4444; /* red-500 */ }
+.status-pesanan-disetujui { background-color: #22c55e; }
+.status-sedang-berjalan { background-color: #3b82f6; }
+.status-selesai { background-color: #16a34a; }
+.status-pesanan-ditolak { background-color: #ef4444; }
 
 
-/* Arrange forms and links within to be vertically aligned */
 .action-buttons form,
 .action-buttons a {
     display: inline-block;
@@ -288,7 +287,7 @@ table td:nth-child(8) {
     display: inline-block;
     border: none;
     cursor: pointer;
-    white-space: normal; /* Changed from nowrap to normal to allow text to wrap */
+    white-space: normal; 
 }
 
 .btn {
@@ -348,7 +347,7 @@ table td:nth-child(8) {
 }
 
 .custom-file-upload input[type="file"] {
-    display: none; /* Hide original file input */
+    display: none; 
 }
 
 .file-upload-label {
@@ -363,13 +362,12 @@ table td:nth-child(8) {
     padding-left: 15px;
     color: #64748b;
     font-size: 14px;
-    white-space: nowrap; /* This was the culprit for file name display */
+    white-space: nowrap; 
     overflow: hidden;
     text-overflow: ellipsis;
 }
 
-/** STYLE FOR TRANSACTIONS **/
-/* Add style for status badge */
+/** STYLE TRANSAKSI **/
 .status-badge {
     padding: 4px 8px;
     border-radius: 5px;
@@ -377,28 +375,28 @@ table td:nth-child(8) {
     font-weight: bold;
     color: white;
 }
-/* Colors for new status */
-.status-menunggu-konfirmasi { background-color: #f59e0b; /* orange */ }
-.status-pesanan-disetujui { background-color: #22c55e; /* green-500 */ }
-.status-sedang-berjalan { background-color: #3b82f6; /* blue-500 */ }
-.status-selesai { background-color: #16a34a; /* green-700 */ }
-.status-pesanan-ditolak { background-color: #ef4444; /* red-500 */ }
+
+.status-menunggu-konfirmasi { background-color: #f59e0b; }
+.status-pesanan-disetujui { background-color: #22c55e; }
+.status-sedang-berjalan { background-color: #3b82f6; }
+.status-selesai { background-color: #16a34a; }
+.status-pesanan-ditolak { background-color: #ef4444; }
 
 /* Style for buttons in the table */
-.btn-setujui { background-color: #22c55e; /* Green for approve */ }
-.btn-tolak { background-color: #ef4444; /* Red for reject */ }
-.btn-mulai { background-color: #3b82f6; /* Blue for start rental */ }
-.btn-selesai { background-color: #16a34a; /* Dark green for return confirmation */ }
+.btn-setujui { background-color: #22c55e; }
+.btn-tolak { background-color: #ef4444; }
+.btn-mulai { background-color: #3b82f6; }
+.btn-selesai { background-color: #16a34a; }
 
 .btn-setujui:hover, .btn-tolak:hover, .btn-mulai:hover, .btn-selesai:hover {
     opacity: 0.6;
 }
 
 .action-buttons form {
-     margin-right: 5px; /* Small spacing between buttons */
-     margin-bottom: 5px; /* Spacing between buttons if on a new line */
-     display: inline-block; /* Ensure buttons remain aligned */
+    margin-right: 5px; 
+    margin-bottom: 5px; 
+    display: inline-block; 
 }
 .action-buttons button {
-    white-space: normal; /* Changed from nowrap to normal to allow text to wrap */
+    white-space: normal; 
 }

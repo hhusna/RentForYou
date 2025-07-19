@@ -6,7 +6,7 @@
             <h1 class="booking-page-title"><?php echo $page_title; ?></h1>
 
             <div class="booking-grid">
-                <!-- Kolom Kiri: Form Verifikasi -->
+                <!-- Form Verifikasi -->
                 <div class="form-verification-section">
                     <form action="booking_controller.php" method="POST" enctype="multipart/form-data">
                         
@@ -42,7 +42,7 @@
                 <div class="order-summary-section">
                     <h3>Ringkasan Pesanan</h3>
                     <div class="summary-card">
-                        <img src="/RentForYou/assets/uploads/<?php echo htmlspecialchars($motor['gambar']); ?>" alt="Gambar Motor">
+                        <img src="../assets/uploads/<?php echo htmlspecialchars($motor['gambar']); ?>" alt="Gambar Motor">
                         <div class="summary-details">
                             <h4><?php echo htmlspecialchars($motor['merk'] . ' ' . $motor['model']); ?></h4>
                             <p><strong>Tanggal Sewa:</strong> <?php echo htmlspecialchars($_SESSION['booking_data']['tanggal_sewa']); ?></p>

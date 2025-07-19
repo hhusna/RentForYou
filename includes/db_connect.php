@@ -19,7 +19,6 @@ try {
     $conn->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 
 } catch(PDOException $e) {
-    // Jika koneksi gagal, hentikan script dan tampilkan pesan error.
     die("Koneksi ke database gagal: " . $e->getMessage());
 }
 

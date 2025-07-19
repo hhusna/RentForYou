@@ -56,7 +56,7 @@
             <?php foreach ($motors as $motor): ?>
                 <div class="motor-card">
                     <div class="card-image">
-                        <img src="/RentForYou/assets/uploads/<?php echo htmlspecialchars($motor['gambar']); ?>" alt="Gambar <?php echo htmlspecialchars($motor['merk'] . ' ' . $motor['model']); ?>">
+                        <img src="../assets/uploads/<?php echo htmlspecialchars($motor['gambar']); ?>" alt="Gambar <?php echo htmlspecialchars($motor['merk'] . ' ' . $motor['model']); ?>">
                     </div>
                     <div class="card-content">
                         <h3 class="card-title"><?php echo htmlspecialchars($motor['merk'].' '.$motor['model']); ?></h3>

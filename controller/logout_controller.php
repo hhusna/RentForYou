@@ -23,7 +23,7 @@ if (ini_get("session.use_cookies")) {
 // Terakhir, hancurkan session-nya.
 session_destroy();
 
-// 4. Arahkan pengguna kembali ke halaman login CONTROLLER dengan path absolut
-header("Location: /RentForYou/controller/beranda_controller.php");
+// 4. Arahkan pengguna kembali ke halaman login CONTROLLER 
+header("Location:../controller/beranda_controller.php");
 exit();
 ?>

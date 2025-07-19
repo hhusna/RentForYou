@@ -40,7 +40,7 @@
                 </span>
             </div>
             <?php if (!empty($motor['gambar'])): ?>
-                <img src="/RentForYou/assets/uploads/motor/<?php echo htmlspecialchars($motor['gambar']); ?>" alt="Gambar Saat Ini" style="max-width: 150px; margin-top: 10px; border-radius: 8px;">
+                <img src="../assets/uploads/motor/<?php echo htmlspecialchars($motor['gambar']); ?>" alt="Gambar Saat Ini" style="max-width: 150px; margin-top: 10px; border-radius: 8px;">
             <?php endif; ?>
         </div>
         <div class="form-group">

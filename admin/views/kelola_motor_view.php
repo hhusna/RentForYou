@@ -29,7 +29,7 @@
                         <td><?php echo htmlspecialchars($motor['id_motor']); ?></td>
                         <td>
                             <?php if (!empty($motor['gambar'])): ?>
-                                <img src="/RentForYou/assets/uploads/<?php echo htmlspecialchars($motor['gambar']); ?>" alt="Gambar Motor" width="80" style="border-radius: 6px;">
+                                <img src="../assets/uploads/<?php echo htmlspecialchars($motor['gambar']); ?>" alt="Gambar Motor" width="80" style="border-radius: 6px;">
                             <?php else: ?>
                                 <span>-</span>
                             <?php endif; ?>

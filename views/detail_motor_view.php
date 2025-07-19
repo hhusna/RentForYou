@@ -6,13 +6,12 @@
             
             <!-- Kolom Kiri: Gambar Motor -->
             <div class="detail-image-column">
-                <img src="/RentForYou/assets/uploads/<?php echo htmlspecialchars($motor['gambar']); ?>" class="main-detail-image">
+                <img src="../assets/uploads/<?php echo htmlspecialchars($motor['gambar']); ?>" class="main-detail-image">
             </div>
 
             <!-- Kolom Kanan: Info & Form Booking -->
             <div class="detail-info-column">
                 <h1 class="detail-title"><?php echo htmlspecialchars($motor['merk'] . ' ' . $motor['model']); ?></h1>
-                <!-- ... (detail lainnya) ... -->
 
                 <hr class="detail-divider">
 
@@ -33,7 +32,6 @@
                         </div>
                     </div>
                     
-                    <!-- Tombol ini sekarang punya name="lanjut_pesan" -->
                     <button type="submit" name="lanjut_pesan" class="btn btn-pesan-besar">Lanjut ke Pemesanan</button>
                 </form>
             </div>

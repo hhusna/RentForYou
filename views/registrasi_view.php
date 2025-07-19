@@ -27,7 +27,6 @@ if (session_status() === PHP_SESSION_NONE) {
             }
             ?>
 
-            <!-- Baris untuk menampung dua kolom -->
             <div class="form-row">
                 <!-- Kolom Kiri -->
                 <div class="form-column">
@@ -62,11 +61,9 @@ if (session_status() === PHP_SESSION_NONE) {
                 </div>
             </div>
 
-            <!-- Tombol dan link tetap di bawah -->
             <button type="submit" class="btn-submit">Buat Akun</button>
             <p class="form-footer">Sudah punya akun? <a href="login_controller.php">Login di sini</a></p>
         </form>
     </div>
-
 </body>
 </html>

@@ -17,12 +17,11 @@ if (session_status() === PHP_SESSION_NONE) {
             <h2>Selamat Datang RentFriends!</h2>
 
             <?php
-            // Menampilkan pesan error jika ada
             if (isset($_SESSION['error_message'])) {
                 echo '<div class="message error-message">' . $_SESSION['error_message'] . '</div>';
                 unset($_SESSION['error_message']);
             }
-            // Menampilkan pesan sukses dari registrasi jika ada
+
             if (isset($_SESSION['success_message'])) {
                 echo '<div class="message success-message">' . $_SESSION['success_message'] . '</div>';
                 unset($_SESSION['success_message']);
@@ -42,10 +41,8 @@ if (session_status() === PHP_SESSION_NONE) {
                 <input type="password" id="password" name="password" required>
             </div>
             
-            <!-- Hidden input untuk menyimpan role -->
             <input type="hidden" id="role" name="role" value="">
 
-            <!-- Tombol Login -->
             <div class="login-buttons">
                 <button type="button" class="btn-login" data-role="admin">Login as Admin</button>
                 <button type="button" class="btn-login" data-role="pengguna">Login as User</button>
@@ -56,12 +53,9 @@ if (session_status() === PHP_SESSION_NONE) {
     </div>
 
     <script>
-        // Script untuk menangani klik tombol login
         document.querySelectorAll('.btn-login').forEach(button => {
             button.addEventListener('click', function() {
-                // Set nilai role di hidden input
                 document.getElementById('role').value = this.dataset.role;
-                // Submit form
                 document.getElementById('login-form').submit();
             });
         });

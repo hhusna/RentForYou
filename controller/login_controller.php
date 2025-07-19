@@ -31,10 +31,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                 // Arahkan ke halaman yang sesuai
                 if ($user['role'] === 'admin') {
-                    // PERBAIKAN: Arahkan ke controller dashboard yang benar dengan path absolut
-                    header("Location: /RentForYou/admin/controller/dashboard_controller.php");
+                    header("Location:../admin/controller/dashboard_controller.php");
                 } else {
-                    header("Location: /RentForYou/controller/beranda_controller.php");
+                    header("Location:../controller/beranda_controller.php");
                 }
                 exit();
             } else {
